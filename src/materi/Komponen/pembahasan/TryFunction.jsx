@@ -15,7 +15,7 @@ const TryFunction = ({latihan}) => {
             <h3>Halo, Selamat {latihan}</h3>
             <input placeholder="ketikkan sesuatu"></input>
             <button onClick={tabelHasil}>-</button>
-            <span>{' '}{value}{' '}</span>
+            
             
         </div>
     )}

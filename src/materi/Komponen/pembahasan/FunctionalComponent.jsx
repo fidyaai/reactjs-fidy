@@ -19,7 +19,7 @@ const FunctionalComponent = ({nama}) => {
             <button onClick={handleMinus}>-</button>
             <span>{' '}{value}{' '}</span>
             <button onClick={handlePlus}>+</button>
-            m        </div>
+        </div>
     )}
 
 FunctionalComponent.defaultProps = {
