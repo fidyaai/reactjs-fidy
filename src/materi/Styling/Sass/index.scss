@@ -1,0 +1,37 @@
+$blue : #2196F3;
+$red : firebrick;
+
+.btn {
+    border: 2px solid black;
+    background-color: whitesmoke;
+    color: black;
+    padding: 14px 28px;
+    font-size: 16px;
+    cursor: pointer;
+
+}
+
+.btn-info {
+    border-color: $blue;
+    color: dodgerblue;
+    
+    &:hover{
+        background: darkseagreen;
+        color: black;
+        border-radius: 10px;
+    }
+}
+
+.btn-danger {
+    border-color: $red;
+    color: rgb(58,69,80);
+
+    &:hover{
+        background: $red;
+        color: white;
+    }
+}
+
+.title {
+    color: $red;
+}

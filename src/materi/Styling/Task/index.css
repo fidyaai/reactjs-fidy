@@ -1,0 +1,17 @@
+.container{
+	margin-top:0;
+	margin-right: 50px;
+	margin-left:50px;
+	background-color: lightsteelblue;
+	text-align: justify;
+	opacity: 70%;
+	font: black;
+}
+.title{
+    text-align: center;
+    text-decoration: dotted;
+}
+.footer {
+    text-align: center;
+    font-size: small;
+}
