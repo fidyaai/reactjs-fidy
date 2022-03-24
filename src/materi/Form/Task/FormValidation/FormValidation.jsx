@@ -24,13 +24,29 @@ class FormValidation extends React.Component {
     state= {
         email: '',
         password: '',
+        fullname: '',
+        tempatlahir: '',
+        tanggallahir: '',
+
         errors: []
     }
     handleSubmit= (event) => {
         event.preventDefault();
-        const {email, password}= this.state;
+        const {email, password, fullname, tempatlahir, tanggallahir,jeniskelamin}= this.state;
 
         let message=[];
+        if(fullname.length === 0){
+            message = [...message, 'Nama tidak boleh kosong'];
+        }
+        if(tempatlahir.length === 0){
+            message = [...message, 'Tempat lahir tidak boleh kosong'];
+        }
+        if(tanggallahir.length === 0){
+            message = [...message, 'tanggal lahir harus diisi'];
+        }
+        if(jeniskelamin.length === 0){
+            message = [...message, 'jenis kelamin harus dipilih'];
+        }
         if(email.length === 0){
         message = [...message, 'Email tidak boleh kosong'];
         }
@@ -49,9 +65,12 @@ class FormValidation extends React.Component {
         }
         else{
             alert(`
-            nama: ${this.state.email}
-            jurusan: ${this.state.password}
-        `);
+            nama: ${this.state.fullname}
+            tempatlahir: ${this.state.tempatlahir}
+            tanggallahir: ${this.state.tanggallahir}
+            jeniskelamin: ${this.state.jeniskelamin}
+            email: ${this.state.email}
+            `);
         this.setState({
             errors: []
         })
@@ -72,12 +91,20 @@ render () {
             {
                 this.state.errors && <ShowErrors errors={this.state.errors}/>
             }
-            <h4>Login page</h4>
+            <h4>Sig in page</h4>
             <form onSubmit={this.handleSubmit} >
+                <Input type="text" name="fullname" label="Fullname" onChange={value => this.setState({fullname: value})} />
+                <Input type="text" name="tempatlahir" label="Tempat Lahir" onChange={value => this.setState({tempatlahir: value})} />
+                <Input type="date" name="tanggallahir" label="Tanggal Lahir" onChange={value => this.setState({tanggallahir: value})} />
+                <select name="jeniskelamin" label="Jenis Kelamin" onChange={value => this.setState({jeniskelamin: value})}>
+                <option name="pria" label="pria" onClick={value => this.setState({jeniskelamin: value})}>pria</option>
+                <option name="wanita" label="wanita" onClick={value => this.setState({jeniskelamin: value})}>wanita</option>
+                </select>
                 <Input type="email" name="email" label="Email" onChange={value => this.setState({email: value})} />
                 <Input type="password" name="password" label="Password" onChange={value => this.setState({password: value})} />
+                
                 <br />
-                <button type="submit">Login..</button>
+                <button type="submit">Sig In..</button>
             </form>
         </div>
     )

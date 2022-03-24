@@ -1,11 +1,11 @@
 import React from "react";
-import Validation from "./FormValidation";
+import FormValidation from "./FormValidation/FormValidation";
 import 
 
 function App() {
     return (
       <div className="App">
-        < Validation/>
+        < FormValidation/>
       </div>
     );
   }
