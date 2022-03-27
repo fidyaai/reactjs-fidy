@@ -97,8 +97,9 @@ render () {
                 <Input type="text" name="tempatlahir" label="Tempat Lahir" onChange={value => this.setState({tempatlahir: value})} />
                 <Input type="date" name="tanggallahir" label="Tanggal Lahir" onChange={value => this.setState({tanggallahir: value})} />
                 <select name="jeniskelamin" label="Jenis Kelamin" onChange={value => this.setState({jeniskelamin: value})}>
-                <option name="pria" label="pria" onClick={value => this.setState({jeniskelamin: value})}>pria</option>
-                <option name="wanita" label="wanita" onClick={value => this.setState({jeniskelamin: value})}>wanita</option>
+                <option name="pilihjeniskelamin" label="Pilih jenis kelamin" onChange={value => this.setState({jeniskelamin: value})}>Pilih jenis kelamin</option>
+                <option name="pria" label="pria" onChange={value => this.setState({jeniskelamin: value})}>pria</option>
+                <option name="wanita" label="wanita" onChange={value => this.setState({jeniskelamin: value})}>wanita</option>
                 </select>
                 <Input type="email" name="email" label="Email" onChange={value => this.setState({email: value})} />
                 <Input type="password" name="password" label="Password" onChange={value => this.setState({password: value})} />
